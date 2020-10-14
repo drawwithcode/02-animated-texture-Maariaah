@@ -1,3 +1,5 @@
+"use strict";
+
 let eyesCollection = [];
 
 function setup() {
@@ -18,7 +20,7 @@ function setup() {
 }
 
 function draw() {
-  background(0023);
+  background('#0024');
 
   for (let i = 0; i < eyesCollection.length; i++) {
     eyesCollection[i].display();
@@ -48,7 +50,6 @@ class Eye {
     translate(this.x, this.y);
     fill(255, 255, 255, 127);
     beginShape();
-    //stroke(255);
     vertex(-80, 0);
     bezierVertex(-30, -50, 30, -50, 80, 0);
     bezierVertex(30, 50, -30, 50, -80, 0);
