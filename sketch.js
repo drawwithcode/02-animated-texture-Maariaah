@@ -29,7 +29,7 @@ function draw() {
 }
 
 function addEye(a, b, c, d) {
-  newEye = new Eye(a, b, c, d);
+  const newEye = new Eye(a, b, c, d);
   eyesCollection.push(newEye);
 }
 
