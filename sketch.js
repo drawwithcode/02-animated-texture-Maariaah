@@ -20,7 +20,7 @@ function setup() {
 }
 
 function draw() {
-  background('#0024');
+  background('#191D2D');
 
   for (let i = 0; i < eyesCollection.length; i++) {
     eyesCollection[i].display();
