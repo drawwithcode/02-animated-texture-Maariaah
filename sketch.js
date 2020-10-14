@@ -57,8 +57,8 @@ class Eye {
 
     if (random(20) < 2) {
       frameRate(1);
-      stroke(255);
-      line(-80, 00, -30 + 110, 0);
+      stroke('white');
+      line(-80, 0, -30 + 110, 0);
     } else {
       ellipse(0, 0, this.size + 10, this.size + 10);
       rotate(this.angle);
