@@ -1,3 +1,4 @@
+//Red eyes by Maariah
 "use strict";
 
 let eyesCollection = [];
@@ -22,7 +23,7 @@ function draw() {
 }
 
 function addEye() {
-  let colors = ["orange", "red", "blue"];
+  let colors = ["#bf0d2a", "#f74848", "#fc173c", "#ff0000", '#851b1b'];
   for (var x = 0; x < width * 2; x += width / 5) {
     for (var y = 0; y < height * 2; y += height / 5) {
       const newEye = new Eye(x, y, random(colors));
@@ -45,20 +46,27 @@ class Eye {
   }
 
   openEye() {
+    push();
+    fill("#6e0202");
     ellipse(0, 0, this.size + 10, this.size + 10);
     rotate(this.angle);
     fill(this.color);
     ellipse(0, 0, this.size, this.size);
     fill(0);
     ellipse(this.size / 4, 0, this.size / 2, this.size / 1.7);
+    pop();
+    push();
+
+    noStroke();
+    fill(255, 255, 255, 70);
+    ellipse(this.size / 200, 10, this.size / 3, this.size / 2);
+    pop();
+
   }
 
-  moveEye() {}
-
   closedEye() {
-    frameRate(1);
     stroke("white");
-    line(-37, 0, -10 + 47, 0);
+    line(-37, 0, 37, 0);
   }
 
   display() {
@@ -72,12 +80,7 @@ class Eye {
     endShape();
 
     if (dist(mouseX, mouseY, this.x, this.y) < this.size) {
-      if (mouseIsPressed) {
-        this.closedEye();
-      } else {
-        this.openEye();
-        this.moveEye();
-      }
+       this.closedEye();
     } else {
       this.openEye();
     }
